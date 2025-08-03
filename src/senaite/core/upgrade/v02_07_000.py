@@ -31,6 +31,12 @@ from senaite.core.setuphandlers import add_catalog_column
 from senaite.core.setuphandlers import add_catalog_index
 from senaite.core.upgrade import upgradestep
 from senaite.core.upgrade.utils import UpgradeUtils
+from senaite.core.upgrade.utils import copy_snapshots
+from senaite.core.upgrade.utils import delete_object
+from senaite.core.upgrade.utils import uncatalog_object
+from senaite.core.upgrade.v02_06_000 import get_setup_folder
+from senaite.core.upgrade.v02_06_000 import migrate_to_dx
+from senaite.core.upgrade.v02_06_000 import remove_at_portal_types
 from zope.interface import alsoProvides
 
 version = "2.7.0"  # Remember version number in metadata.xml and setup.py
@@ -137,3 +143,48 @@ def update_analysis_catalog_indexes(tool):
         catalog.reindexIndex(index_id, api.get_request())
 
     logger.info("Update analysis catalog indexes [DONE]")
+
+
+def migrate_analysisservices_to_dx(tool):
+    """Converts existing analysis services to Dexterity
+    """
+    logger.info("Convert Analysis Services to Dexterity ...")
+
+    # ensure old AT types are flushed first
+    remove_at_portal_types(tool)
+
+    # run required import steps
+    tool.runImportStepFromProfile(profile, "typeinfo")
+    tool.runImportStepFromProfile(profile, "workflow")
+
+    origin = api.get_setup().get("bika_analysisservices")
+    if not origin:
+        # old container is already gone
+        return
+
+    # get the destination container
+    destination = get_setup_folder("analysisservices")
+
+    # un-catalog the old container
+    uncatalog_object(origin)
+
+    # Mapping from schema field name to a tuple of
+    # (accessor, target field name, default value)
+    schema_mapping = {
+        "title": ("Title", "title", ""),
+        "description": ("Description", "description", ""),
+        "short_title": ("getShortTitle", "short_title", ""),
+    }
+
+    migrate_to_dx("AnalysisService", origin, destination, schema_mapping)
+
+    # copy snapshots for the container
+    copy_snapshots(origin, destination)
+
+    # remove old AT folder
+    if len(origin) == 0:
+        delete_object(origin)
+    else:
+        logger.warn("Cannot remove {}. Is not empty".format(origin))
+
+    logger.info("Convert Analysis Services to Dexterity [DONE]")
