@@ -504,3 +504,13 @@ class IWorksheetTemplates(Interface):
 class IWorksheetTemplate(Interface):
     """Marker interface for Worksheet Template
     """
+
+
+class IAnalysisServices(Interface):
+    """Marker interface for Analysis Services folder
+    """
+
+
+class IAnalysisService(Interface):
+    """Marker interface for Analysis Service
+    """
