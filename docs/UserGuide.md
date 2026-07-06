@@ -15,9 +15,11 @@ directly to the topic you need.
 
 | Chapter | What it covers |
 |---------|----------------|
+| [Users, Roles & Permissions](UserRolesAndPermissions.md) | Laboratory users and groups, the standard SENAITE roles and what each can do, lab contacts, departments and security settings. |
 | [Clients & Contacts](ClientsAndContacts.md) | Registering clients and their contacts, client portal access, CC recipients, client-specific setup and permissions. |
 | [Analysis Services, Profiles & Sample Templates](AnalysesSetup.md) | Configuring categories, analysis services, calculations, methods, profiles, sample templates, specifications, sample types, containers and preservations. |
 | [Instruments & Calibration](Instruments.md) | Registering instruments, calibration certificates, validations and maintenance, validity rules that block result entry, and importing results from instruments. |
+| [Storage Locations](StorageLocations.md) | Configuring storage locations and recording where each sample is kept. |
 
 ## The Sample Lifecycle
 
@@ -38,3 +40,9 @@ directly to the topic you need.
 | [Results Entry & Verification](ResultsEntryAndVerification.md) | Entering results, calculations and interim fields, uncertainties and detection limits, submitting, verifying (including multi- and self-verification) and retracting. |
 | [Quality Control](QualityControl.md) | Suppliers, reference definitions and reference samples, blanks, controls and duplicates on worksheets, QC evaluation and charts. |
 | [Publishing Results](ResultsPublication.md) | Publishing verified samples, analysis reports, emailing reports to contacts, invalidation and retests, printing and stickers. |
+
+## Keeping Track
+
+| Chapter | What it covers |
+|---------|----------------|
+| [Dashboard & Reports](DashboardAndReports.md) | The dashboard panels and charts, productivity and administration reports, and the audit log. |
