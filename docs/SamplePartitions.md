@@ -25,6 +25,7 @@ how to configure the system around them.
 10. [Detaching a Partition](#detaching-a-partition)
 11. [Copying Samples that have Partitions](#copying-samples-that-have-partitions)
 12. [Frequently Asked Questions](#frequently-asked-questions)
+13. [Related Guides](#related-guides)
 
 ---
 
@@ -290,3 +291,18 @@ is flagged for **Internal Use**. Both are intentional visibility controls.
 **Can I cancel a primary without cancelling its partitions?**
 No. Cancelling a primary sample requires that all of its partitions can be
 cancelled, and the cancellation cascades to them.
+
+## Related Guides
+
+- [Secondary Samples](SecondarySamples.md) — a different way to derive a
+  sample from an existing one: a new sample sharing the primary's physical
+  material, rather than a split of it.
+- [Sample Lifecycle & Workflow States](SampleWorkflow.md) — the full sample
+  workflow that primaries and partitions move through.
+- [Registering Samples](SampleRegistration.md) — the Add Samples form,
+  including copying samples that have partitions.
+- [Analysis Services, Profiles & Sample Templates](AnalysesSetup.md) —
+  configuring the sample templates that drive automatic partitioning.
+- [Sample Rejection](SampleRejection.md) — how rejection cascades between
+  primaries and partitions.
+- Back to the [User Guide index](UserGuide.md).
