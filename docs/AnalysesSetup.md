@@ -9,7 +9,7 @@ once, under *Setup*, and then reused every day at sample registration.
 This guide explains that laboratory setup from an end-user perspective:
 analysis categories and services, calculations and methods, analysis
 profiles, sample templates, analysis specifications, sample types, sample
-points, containers and preservations.
+matrices, sample points, containers and preservations.
 
 ---
 
@@ -24,9 +24,10 @@ points, containers and preservations.
 7. [Sample Templates](#sample-templates)
 8. [Analysis Specifications](#analysis-specifications)
 9. [Sample Types](#sample-types)
-10. [Sample Points](#sample-points)
-11. [Containers and Preservations](#containers-and-preservations)
-12. [Frequently Asked Questions](#frequently-asked-questions)
+10. [Sample Matrices](#sample-matrices)
+11. [Sample Points](#sample-points)
+12. [Containers and Preservations](#containers-and-preservations)
+13. [Frequently Asked Questions](#frequently-asked-questions)
 
 ---
 
@@ -42,6 +43,7 @@ points, containers and preservations.
 | **Sample Template** | A blueprint for a whole sample: sample type, sample point, services and a partition scheme. | *Setup → Sample Templates*, or inside a client |
 | **Analysis Specification** | Valid result ranges (min/max, warning shoulders) per service for a given sample type. | *Setup → Analysis Specifications*, or inside a client |
 | **Sample Type** | The kind of material sampled (e.g. *Water*, *Soil*), with ID prefix, retention period, etc. | *Setup → Sample Types* |
+| **Sample Matrix** | An optional classification of sample types by the medium sampled (e.g. *Liquid*, *Solid*). | *Setup → Sample Matrices* |
 | **Sample Point** | The physical location where samples are collected. | *Setup → Sample Points*, or inside a client |
 | **Container / Container Type** | The vessels samples and partitions are stored in. | *Setup → Sample Containers*, *Setup → Container Types* |
 | **Preservation** | The preservation method applied to a sample or partition. | *Setup → Sample Preservations* |
@@ -381,13 +383,39 @@ every sample. Go to *Setup → Sample Types* and press *Add*:
 | **Sample Type Prefix** | Short ASCII code without whitespaces, typically used to build sample IDs (e.g. prefix `WATER` → `WATER-0001`). |
 | **Retention Period** | How long unpreserved samples of this type can be kept before they expire and cannot be analysed any further. Defaults to the setup's default sample lifetime. |
 | **Hazardous** | Samples of this type should be treated as hazardous. |
-| **Sample Matrix** | Optional classification of the matrix (configured under *Setup → Sample Matrices*). |
+| **Sample Matrix** | Optional classification of the matrix (see [Sample Matrices](#sample-matrices)). |
 | **Minimum Volume** | The minimum sample volume required for analysis, e.g. *10 ml* or *1 kg*. Samples arriving with insufficient volume are typical candidates for rejection at reception (see [Sample Rejection](SampleRejection.md)). |
 | **Default Container Type** | New sample partitions are automatically assigned a container of this type, unless specified in more detail elsewhere. |
 | **Admitted sticker templates** | Which barcode/label stickers may be used for this sample type, and the default small and large sticker. |
 
 Sample types are referenced almost everywhere: by templates, profiles,
 specifications, sample points and at registration.
+
+## Sample Matrices
+
+A sample matrix classifies sample types by the medium that is sampled —
+for example *Liquid*, *Solid* and *Gas*, or finer distinctions such as
+*Drinking Water* and *Waste Water*. Matrices are purely descriptive: they
+add no behaviour of their own, but give related sample types a common
+label, so the lab's catalogue of sample types stays organised as it grows.
+
+To create one, go to *Setup → Sample Matrices* and press *Add*:
+
+| Field | Meaning |
+|-------|---------|
+| **Name** | The matrix title, e.g. *Liquid*. |
+| **Description** | Free text, shown in listings. |
+
+To assign a matrix, edit a [sample type](#sample-types) and select it in
+the **Sample Matrix** field (*"Select the sample matrix for this sample
+type"*). Each sample type can carry at most one matrix, and the field is
+optional — sample types without a matrix are perfectly valid. The assigned
+matrix is displayed as a column in the *Sample Types* listing, with a link
+to the matrix itself.
+
+Like most setup items, sample matrices can be **deactivated** instead of
+deleted: an inactive matrix is kept for existing sample types but is no
+longer offered for selection.
 
 ## Sample Points
 

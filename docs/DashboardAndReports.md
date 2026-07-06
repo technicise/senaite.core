@@ -4,8 +4,9 @@ SENAITE gives laboratory staff several ways to keep an eye on the work and
 the history of the system: the **System Dashboard** with live panels and
 evolution charts for samples, analyses and worksheets; a built-in **Reports**
 section with productivity and administrative reports (available in older
-versions, see the version note below); and the **Audit Log**, which records
-every change made to the objects in the system.
+versions, see the version note below); the **Audit Log**, which records
+every change made to the objects in the system; and a **Global Search** for
+finding any record from anywhere.
 
 This guide explains the feature from an end-user perspective: what each
 dashboard panel and report shows, how to filter and export them, and how to
@@ -26,8 +27,9 @@ configure who sees what.
 9. [Administrative Reports](#administrative-reports)
 10. [Report History](#report-history)
 11. [The Audit Log](#the-audit-log)
-12. [Frequently Asked Questions](#frequently-asked-questions)
-13. [Related Guides](#related-guides)
+12. [Global Search](#global-search)
+13. [Frequently Asked Questions](#frequently-asked-questions)
+14. [Related Guides](#related-guides)
 
 ---
 
@@ -326,6 +328,35 @@ Notes:
 - Changes made while the global option was off are indexed again after it
   is re-enabled (a reindex of existing objects may be needed for the
   global listing to be complete).
+
+## Global Search
+
+Besides the dashboards and logs, SENAITE offers a **global search** that is
+available from every page — handy whenever you know *what* you are looking
+for (a sample ID, a client name, a batch, …) but not *where* it lives:
+
+- Click the **magnifier icon** at the top right of the toolbar, or
+- press **Ctrl+Space** anywhere in the application (*"Press Ctrl+Space to
+  trigger the Spotlight search"*, as the icon's tooltip says).
+
+A search box opens in which you simply start typing. Matching records from
+across the whole system — samples, clients, batches, worksheets, contacts,
+setup items and so on, limited to what your role is allowed to see — appear
+as you type, and clicking a result takes you straight to it. The search is
+only offered to logged-in users.
+
+The search interface itself is provided by the **senaite.app.spotlight**
+add-on. It is a required part of the product and installed automatically
+with every standard SENAITE installation, so no extra setup is needed; the
+exact behaviour and result presentation may evolve with that add-on
+independently of the core version.
+
+**Global search vs. listing filters:** the search field at the top of a
+listing (samples, batches, worksheets, …) only *filters the rows of that
+listing*, within the currently selected state tab. The global search spans
+all object types at once and works from any page. Use the global search to
+**find and open** a specific record; use the listing filters to **narrow
+down** a working list you then act on (select, transition, print, …).
 
 ## Frequently Asked Questions
 

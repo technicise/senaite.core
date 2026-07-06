@@ -9,8 +9,8 @@ spreadsheet-like *Batch Book*.
 
 This guide explains the feature from an end-user perspective: what batches
 are, how to create client and lab batches, how batch IDs and labels work, how
-samples get assigned to a batch, the batch workflow, the batch book view, and
-the printing options available.
+samples get assigned to a batch, the batch workflow, the batch book view and
+its sub-groups, and the printing options available.
 
 ---
 
@@ -27,8 +27,9 @@ the printing options available.
 9. [The Batches Listing](#the-batches-listing)
 10. [Batch Workflow States](#batch-workflow-states)
 11. [The Batch Book](#the-batch-book)
-12. [Printing and Stickers](#printing-and-stickers)
-13. [Frequently Asked Questions](#frequently-asked-questions)
+12. [Sub-groups](#sub-groups)
+13. [Printing and Stickers](#printing-and-stickers)
+14. [Frequently Asked Questions](#frequently-asked-questions)
 
 ---
 
@@ -261,7 +262,7 @@ grid, designed for rapid results entry across the whole batch:
   analysis' short title where available, with the unit displayed next to the
   result).
 - Rows are grouped by the samples' **Batch Sub-group**; samples without one
-  fall under *"No Subgroup"*.
+  fall under *"No Subgroup"* (see [Sub-groups](#sub-groups)).
 
 Results can be typed **directly into the grid** for any analysis you are
 allowed to edit, except analyses whose result comes from a calculation. As
@@ -280,6 +281,47 @@ instrument/method details and **submit** for
 The batch book also offers a **Copy to new** button: select samples and copy
 them into the Add Samples form as new samples with the same setup — useful
 for recurring batches (see also [Sample Registration](SampleRegistration.md)).
+
+## Sub-groups
+
+Sub-groups provide an optional **second grouping level below the batch**:
+each sample can carry a *Batch Sub-group* tag, and the
+[Batch Book](#the-batch-book) groups its rows by it. Typical examples: a
+stability-study batch with sub-groups per time point (*Week 1*, *Week 4*,
+…), or a sampling round with a sub-group per location.
+
+### Creating sub-groups
+
+1. Go to **Setup → SubGroups** and click **Add**.
+2. Enter a **Name** (e.g. "Week 1") and an optional **Description**.
+3. Optionally set the **Sort Key** — *"Float value from 0.0 - 1000.0
+   indicating the sort order. Duplicate values are ordered
+   alphabetically."* The sort key determines the order in which the groups
+   appear in the batch book.
+4. Save. Like other setup items, sub-groups can later be **deactivated**;
+   inactive sub-groups are no longer offered for selection.
+
+### Assigning a sub-group to a sample
+
+Sub-groups are assigned per **sample**, not per batch:
+
+- On the [Add Samples form](SampleRegistration.md), pick one in the
+  **Batch Sub-group** field (*"The assigned batch sub group of this
+  request"*).
+- On an existing sample, expand the header fields (*Edit*), set the
+  **Batch Sub-group** field and save.
+
+A sample holds at most one sub-group. The field is guarded by the same
+permission as the *Batch* field and stays editable in the same workflow
+states (see [Assigning Samples to a Batch](#assigning-samples-to-a-batch)).
+
+### Effect in the Batch Book
+
+The batch book renders one group of rows per sub-group used in the batch,
+ordered by the sub-groups' **Sort Key**, each with the sub-group's name as
+group header. Samples without a sub-group are collected under
+*"No Subgroup"*. Outside the batch book, sub-groups have no effect — the
+samples listing of the batch shows all samples together.
 
 ## Printing and Stickers
 
@@ -338,3 +380,4 @@ other analyses (see [Analyses Setup](AnalysesSetup.md)).
 **Where do I define Batch Sub-groups?**
 Sub-groups are setup items (Setup → SubGroups). Assign one to a sample via
 its *Batch Sub-group* field; the batch book uses them to group its rows.
+See [Sub-groups](#sub-groups).
