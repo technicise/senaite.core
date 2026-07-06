@@ -20,6 +20,8 @@ directly to the topic you need.
 | [Analysis Services, Profiles & Sample Templates](AnalysesSetup.md) | Configuring categories, analysis services, calculations, methods, profiles, sample templates, specifications, sample types, containers and preservations. |
 | [Instruments & Calibration](Instruments.md) | Registering instruments, calibration certificates, validations and maintenance, validity rules that block result entry, and importing results from instruments. |
 | [Storage Locations](StorageLocations.md) | Configuring storage locations and recording where each sample is kept. |
+| [IDs & Numbering](IDServer.md) | How SENAITE generates IDs for samples, partitions, retests, worksheets and batches, and how to configure the formats in the ID Server. |
+| [Customizing the Sample View](SampleViewCustomization.md) | Arranging the sample header fields, display settings for the sample view and the samples listing. |
 
 ## The Sample Lifecycle
 
@@ -39,10 +41,19 @@ directly to the topic you need.
 | [Worksheets](Worksheets.md) | Creating worksheets manually or from templates, assigning analyses, slots and layouts, adding QC analyses, analyst and instrument assignment. |
 | [Results Entry & Verification](ResultsEntryAndVerification.md) | Entering results, calculations and interim fields, uncertainties and detection limits, submitting, verifying (including multi- and self-verification) and retracting. |
 | [Quality Control](QualityControl.md) | Suppliers, reference definitions and reference samples, blanks, controls and duplicates on worksheets, QC evaluation and charts. |
+| [Attachments](Attachments.md) | Attaching files to samples and analyses, attachment types, required attachments and rendering attachments in reports. |
+| [Results Interpretation & Interpretation Templates](InterpretationTemplates.md) | Writing free-text interpretations on samples and inserting predefined interpretation boilerplate from templates. |
 | [Publishing Results](ResultsPublication.md) | Publishing verified samples, analysis reports, emailing reports to contacts, invalidation and retests, printing and stickers. |
 
 ## Keeping Track
 
 | Chapter | What it covers |
 |---------|----------------|
-| [Dashboard & Reports](DashboardAndReports.md) | The dashboard panels and charts, productivity and administration reports, and the audit log. |
+| [Dashboard & Reports](DashboardAndReports.md) | The dashboard panels and charts, productivity and administration reports, the audit log and the global search. |
+| [Labels](Labels.md) | Tagging samples and other records with labels and finding everything that carries a given label. |
+
+## Billing
+
+| Chapter | What it covers |
+|---------|----------------|
+| [Invoicing, Pricelists & Lab Products](InvoicingAndPricing.md) | Analysis pricing, VAT and discounts, sample invoices, printable pricelists and the lab products catalog. |
